@@ -27,6 +27,23 @@ app.get("/post", (req, res) => {
     });
   });
   
+  // Example: Insert a new post
+app.post("/post", (req, res) => {
+    const title = "The Nightmare";
+    const desc= "I almost died from that scene";
+    const cover= "cover.backend";
+    const username = "Muofhe";
+  
+    const q = `INSERT INTO post (title, desc, cover, username) VALUES (?, ?, ?, ?)`;
+    pool.query(q, [title, desc, cover, username], (err, result) => {
+      if (err) {
+        console.log(err);
+        return res.json(err);
+      }
+      return res.json(data);
+    });
+  });
+  
   
 app.listen(8800, () => {
   console.log("Connected to backend.")
