@@ -40,7 +40,7 @@ app.post("/post", (req, res) => {
         console.log(err);
         return res.json(err);
       }
-      return res.json(data);
+      return res.json("post succefully inserted");
     });
   });
   
