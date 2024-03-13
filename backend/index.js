@@ -12,6 +12,8 @@ const pool = mysql.createPool({
     database: "test",
     debug: false, // Set to true for debugging
   });
+
+  app.get("/", (req,res)=>{res.json("hellow this is backend")})
   
 app.listen(8800, () => {
   console.log("Connected to backend.")
