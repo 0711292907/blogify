@@ -34,7 +34,7 @@ app.post("/post", (req, res) => {
     const cover= "cover.backend";
     const username = "Muofhe";
   
-    const q = `INSERT INTO post (id,title, desc, cover, username) VALUES (?, ?, ?, ?)`;
+    const q = `INSERT INTO post (title, desc, cover, username) VALUES (?, ?, ?, ?)`;
     pool.query(q, [title, descr, cover, username], (err, result) => {
       if (err) {
         console.log(err);
