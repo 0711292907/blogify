@@ -29,13 +29,14 @@ app.get("/post", (req, res) => {
   
   // Example: Insert a new post
 app.post("/post", (req, res) => {
+    const id = 2;
     const title = "The Nightmare";
     const desc= "I almost died from that scene";
     const cover= "cover.backend";
     const username = "Muofhe";
   
-    const q = `INSERT INTO post (title, desc, cover, username) VALUES (?, ?, ?, ?)`;
-    pool.query(q, [title, desc, cover, username], (err, result) => {
+    const q = `INSERT INTO post (id,title, desc, cover, username) VALUES (?, ?, ?, ?)`;
+    pool.query(q, [id,title, desc, cover, username], (err, result) => {
       if (err) {
         console.log(err);
         return res.json(err);
