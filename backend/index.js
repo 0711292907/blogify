@@ -29,10 +29,10 @@ app.get("/post", (req, res) => {
   
   // Example: Insert a new post
 app.post("/post", (req, res) => {
-    const title = "The Nightmare";
-    const descr = "I almost died from that scene";
-    const cover= "cover.backend";
-    const username = "Muofhe";
+    req.body.title,
+    req.body.descr,
+    req.body.title,
+     req.body.username,
   
     const q = `INSERT INTO post (title, descr, cover, username) VALUES (?, ?, ?, ?)`;
     pool.query(q, [title, descr, cover, username], (err, result) => {
