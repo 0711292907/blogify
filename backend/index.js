@@ -16,8 +16,8 @@ const pool = mysql.createPool({
   app.get("/", (req,res)=>{res.json("hellow this is backend")})
 
   // Example: Get all posts
-app.get("/posts", (req, res) => {
-    const q = "SELECT * FROM posts";
+app.get("/post", (req, res) => {
+    const q = "SELECT * FROM post";
     pool.query(q, (err, data) => {
       if (err) {
         console.log(err);
