@@ -2,6 +2,7 @@ import express from "express";
 import mysql from "mysql2";
 import cors from "cors";
 
+const app = express();
 
 // Create a MySQL connection pool
 const pool = mysql.createPool({
@@ -13,7 +14,7 @@ const pool = mysql.createPool({
     debug: false, // Set to true for debugging
   });
   app.use(express.json());
-  const app = express();
+  
   app.use(cors());
   app.get("/", (req,res)=>{res.json("hellow this is backend")})
 
